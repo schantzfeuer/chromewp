@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Ayumin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: 'Segoe UI', sans-serif;
+            width: 260px;
+            background: #0b0514;
+            color: #f8f4ff;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            font-size: 16px;
+        }
+
+        .setting {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            border-radius: 10px;
+            background: rgba(35, 15, 65, 0.45);
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #9d4edd;
+        }
+    </style>
+</head>
+<body>
+    <h3>Pengaturan Panel</h3>
+
+    <div class="setting">
+        <label for="bookmarks-toggle">Tampilkan Bookmarks</label>
+        <input type="checkbox" id="bookmarks-toggle">
+    </div>
+
+    <div class="setting">
+        <label for="history-toggle">Tampilkan History</label>
+        <input type="checkbox" id="history-toggle">
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
