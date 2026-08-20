@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Ayumin Gallery",
-  "version": "2.3.0",
-  "description": "New Tab glassmorphism dengan kolase foto maksimal 25 ubin, efek visual pilihan, jam live, bookmark, dan history.",
+  "name": "ChromeWP (Ayumin Gallery)",
+  "version": "2.3.1",
+  "description": "New Tab glassmorphism dengan kolase foto maksimal 35 ubin, efek visual pilihan, jam live, bookmark, dan history.",
   "minimum_chrome_version": "116",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Pengaturan Ayumin Gallery"
+    "default_title": "ChromeWP (Ayumin Gallery)"
   },
   "permissions": [
     "bookmarks",
