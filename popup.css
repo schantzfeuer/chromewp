@@ -1,0 +1,117 @@
+:root {
+    --bg: #0b0514;
+    --panel: rgba(35, 15, 65, 0.55);
+    --border: rgba(157, 78, 221, 0.35);
+    --violet: #9d4edd;
+    --violet-light: #e0b0ff;
+    --text: #f8f4ff;
+    --text-muted: #b392ac;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 18px;
+    width: 330px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:
+        radial-gradient(circle at 20% -10%, rgba(157, 78, 221, 0.25), transparent 55%),
+        var(--bg);
+    color: var(--text);
+}
+
+header h1 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--violet-light), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin: 0 0 16px;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.group {
+    margin-bottom: 16px;
+}
+
+.group h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--violet-light);
+    margin: 0 0 8px;
+    opacity: 0.85;
+}
+
+.row, .row-stack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--panel);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.row-stack {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    cursor: default;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--violet);
+    cursor: pointer;
+}
+
+select, input[type="text"] {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 7px;
+    padding: 7px 8px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: 2px solid var(--violet);
+    outline-offset: 1px;
+}
+
+.hint {
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.4;
+    opacity: 0.82;
+}
+
+.save-indicator {
+    min-height: 14px;
+    margin: 4px 2px 0;
+    font-size: 11px;
+    color: var(--violet-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.save-indicator.visible {
+    opacity: 1;
+}

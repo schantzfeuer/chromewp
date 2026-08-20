@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tab Baru</title>
+    <title>New Tab</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gallery-container">
+    <div id="gallery-container" aria-hidden="true">
         <div id="gallery-track"></div>
     </div>
-    
-    <div class="vignette-overlay"></div>
+
+    <div class="scrim"></div>
+    <div class="spotlight"></div>
 
     <main class="dashboard">
         <div class="clock-container">
-            <h1 id="time">00:00</h1>
-            <p id="date">Memuat tanggal...</p>
+            <p id="greeting" class="greeting">&nbsp;</p>
+            <h1 id="time"><span id="time-hh">00</span><span class="colon">:</span><span id="time-mm">00</span></h1>
+            <p id="date">Memuat tanggal ...</p>
         </div>
 
         <div class="menu-container" id="menu-container">
             <section class="menu-box" id="bookmarks-box">
                 <h2><span class="icon">⭐</span> Bookmarks</h2>
-                <ul id="bookmarks-list"></ul>
+                <ul id="bookmarks-list">
+                    <li class="skeleton"></li>
+                    <li class="skeleton"></li>
+                    <li class="skeleton"></li>
+                </ul>
             </section>
-            
+
             <section class="menu-box" id="history-box">
                 <h2><span class="icon">🕒</span> History</h2>
-                <ul id="history-list"></ul>
+                <ul id="history-list">
+                    <li class="skeleton"></li>
+                    <li class="skeleton"></li>
+                    <li class="skeleton"></li>
+                </ul>
             </section>
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
-</html>s
+</html>

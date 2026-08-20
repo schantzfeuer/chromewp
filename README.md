@@ -1,93 +1,165 @@
-# Panduan Penggunaan Ekstensi Chrome WP
+# Ayumin Gallery
 
-Ekstensi ini dibuat untuk menampilkan foto-foto yang telah Anda siapkan sebagai bagian dari tampilan visual pada browser Chrome. Ekstensi ini cocok digunakan untuk mempercantik tampilan tab browser atau sebagai elemen dekoratif sederhana.
+Ayumin Gallery adalah ekstensi Chrome yang mengganti halaman **New Tab** dengan wallpaper kolase foto, jam dan tanggal, sapaan, Bookmarks, serta History. Foto diambil dari folder `images` dan daftar file di `photos.json`.
 
-## Apa yang bisa dilakukan ekstensi ini?
+## Yang baru di versi 2.3
 
-Ekstensi ini bekerja dengan menampilkan gambar-gambar dari folder images. Saat ekstensi dijalankan, gambar yang tersedia akan diproses dan ditampilkan sesuai dengan konfigurasi yang ada. Dengan kata lain, Anda dapat mengatur tampilan visual ekstensi dengan mudah hanya dengan menambahkan atau mengubah foto yang ada.
+- Maksimal **25 foto/ubin** dirender sekaligus untuk menjaga performa dan mengurangi lag.
+- Jika jumlah foto yang tersedia lebih sedikit daripada jumlah ubin yang dibutuhkan, foto yang ada akan **dipakai ulang otomatis** sampai wallpaper terisi.
+- Efek foto sekarang bisa diatur dari popup:
+  - **Acak otomatis** untuk mengganti efek saat kolase disegarkan.
+  - **Tanpa efek tambahan** untuk tampilan dasar.
+  - Pilih **satu efek tertentu** jika Anda tidak ingin efek berubah secara acak.
+- Efek baru: **Film hangat**, **Monokrom**, dan **Dreamy pastel**.
+- Popup pengaturan kini menyimpan pilihan efek bersama pengaturan lainnya.
 
-## Persiapan Sebelum Menggunakan
+## Fitur utama
 
-Sebelum mulai, pastikan Anda telah:
-- mengunduh proyek dari GitHub
-- mengekstrak file ke folder yang mudah diakses
-- menyiapkan foto yang ingin ditampilkan
-- memiliki browser Google Chrome yang sudah terinstal di komputer
+- Kolase foto dengan beberapa variasi layout.
+- Maksimal 25 ubin foto dalam satu tampilan.
+- Foto otomatis diulang bila koleksi terlalu sedikit untuk memenuhi kolase.
+- Efek visual acak atau efek tetap pilihan pengguna.
+- Animasi Ken Burns, gerakan ubin, dan parallax yang bisa dimatikan.
+- Jam, tanggal, dan sapaan berdasarkan waktu.
+- Nama panggilan opsional pada sapaan.
+- Panel Bookmarks dan History yang bisa ditampilkan atau disembunyikan.
+- Favicon untuk item Bookmarks dan History.
+- Pergantian layout otomatis setiap 2–30 menit.
+- Klik dua kali pada area wallpaper untuk langsung mengacak ulang kolase.
+- Mengikuti pengaturan sistem `prefers-reduced-motion`.
 
-## Langkah-Langkah Penggunaan
+## Efek yang tersedia
 
-### 1. Unduh proyek dari GitHub
-Kunjungi repository berikut:
+| Efek | Tampilan |
+| --- | --- |
+| **Acak otomatis** | Memilih efek secara otomatis setiap kali kolase dibangun ulang. |
+| **Tanpa efek tambahan** | Foto tampil dengan gaya dasar kolase. |
+| **Kartu melayang** | Foto sedikit miring, sudut lebih bulat, dan bayangan seperti kartu. |
+| **Polaroid** | Bingkai kertas, sedikit sepia, dan efek kilau tipis. |
+| **Bingkai galeri** | Bingkai ganda yang lebih rapi dan formal. |
+| **Tumpukan foto** | Beberapa lapisan terlihat di belakang foto utama seperti tumpukan cetakan. |
+| **Kilau neon** | Cincin violet yang berdenyut saat animasi aktif. |
+| **Film hangat** | Warna hangat, vignette, dan tekstur garis halus seperti film lama. |
+| **Monokrom** | Hitam-putih dengan kontras lebih tinggi. |
+| **Dreamy pastel** | Warna lebih lembut dengan sudut bulat dan glow pastel. |
 
-https://github.com/arzhavz/chromewp
+> Jika **Animasi latar** dimatikan, efek visual statis tetap dapat digunakan, tetapi gerakan seperti Ken Burns, drift, parallax, kilau bergerak, dan animasi masuk akan dihentikan.
 
-Klik tombol Code, lalu pilih Download ZIP.
+## Cara memasang ekstensi
 
-### 2. Ekstrak file hasil unduhan
-Setelah file ZIP selesai diunduh:
-- ekstrak file tersebut ke folder tertentu di komputer Anda
-- pastikan folder hasil ekstraksi tetap utuh dan tidak rusak
-- gunakan folder yang mudah ditemukan kembali, misalnya di Documents atau Desktop
+### 1. Unduh proyek
 
-### 3. Masukkan foto atau sesuaikan foto di folder images
-Buka folder hasil ekstraksi, lalu cari folder bernama images.
+Unduh repository dari GitHub:
 
-Tempatkan foto-foto yang ingin Anda gunakan ke dalam folder tersebut.
+`https://github.com/arzhavz/chromewp`
 
-Beberapa catatan penting:
-- gunakan format foto yang umum, seperti JPG, JPEG, atau PNG
-- nama file sebaiknya sederhana dan jelas
-- Anda juga bisa menghapus foto lama atau mengganti foto yang sudah ada sesuai keinginan
+Pilih **Code → Download ZIP**, lalu ekstrak ZIP ke folder yang mudah ditemukan.
 
-### 4. Jalankan file start.cmd
-Setelah foto selesai dimasukkan, jalankan file start.cmd.
+### 2. Tambahkan foto
 
-Langkah ini sangat penting karena berfungsi untuk mendaftarkan foto ke dalam ekstensi.
+Buka folder `images`, lalu tambahkan foto yang ingin digunakan.
 
-> Catatan penting:
-> File ini aman untuk dijalankan. Program ini hanya digunakan untuk mendaftarkan foto ke dalam ekstensi.
-> Jika Anda tidak ingin menggunakan proses otomatis ini, Anda bisa memasukkan semua nama foto ke dalam file photos.json secara manual.
+Format umum seperti `.jpg`, `.jpeg`, `.png`, dan `.webp` dapat digunakan selama nama file tersebut didaftarkan di `photos.json`.
 
-### 5. Buka browser Chrome
-Setelah proses pendaftaran selesai, buka aplikasi Google Chrome.
+### 3. Perbarui `photos.json`
 
-### 6. Masuk ke halaman ekstensi
-Buka halaman ekstensi Chrome dengan cara:
-- ketikkan chrome://extensions/ di address bar
-- tekan Enter
+Cara termudah adalah menjalankan `start.cmd` yang disediakan proyek untuk mendaftarkan foto secara otomatis.
 
-### 7. Aktifkan Developer Mode
-Di halaman ekstensi, cari tombol yang bertuliskan Developer mode.
+Jika ingin mengaturnya manual, `photos.json` harus berupa array nama file, misalnya:
 
-Aktifkan opsi tersebut dengan mengklik tombolnya.
+```json
+[
+  "foto-01.jpg",
+  "foto-02.png",
+  "foto-03.webp"
+]
+```
 
-### 8. Klik tombol Load unpacked
-Setelah Developer mode aktif, klik tombol Load unpacked.
+Nama di `photos.json` harus sama dengan nama file di folder `images`.
 
-### 9. Pilih folder program
-Pilih folder hasil ekstraksi proyek yang telah Anda unduh sebelumnya.
+### 4. Buka halaman ekstensi Chrome
 
-Pastikan folder yang dipilih adalah folder utama proyek, bukan hanya folder images.
+Di address bar Chrome, buka:
 
-### 10. Ekstensi akan terpasang
-Setelah folder dipilih, ekstensi akan mulai dipasang.
+`chrome://extensions/`
 
-Biasanya, ekstensi akan siap digunakan setelah Anda me-restart atau mulai ulang browser Chrome.
+Aktifkan **Developer mode** di halaman tersebut.
 
-## Fitur tampilan gambar
+### 5. Muat ekstensi
 
-Ekstensi ini menampilkan gambar yang ada dalam folder images sebagai bagian dari tampilan visual ekstensi. Anda dapat:
-- menambahkan foto baru ke folder images
-- mengganti foto lama dengan foto yang lebih sesuai
-- mengatur tampilan visual sesuai keinginan dengan memanfaatkan file foto yang tersedia
+Klik **Load unpacked**, lalu pilih **folder utama proyek**—folder yang berisi `manifest.json`, bukan folder `images`.
 
-Semakin banyak foto yang Anda siapkan, semakin bervariasi tampilan visual yang bisa ditampilkan oleh ekstensi ini.
+Setelah berhasil dimuat, buka tab baru. Ayumin Gallery akan menggantikan halaman New Tab Chrome.
 
-## Selesai
-Setelah Chrome di-restart, ekstensi seharusnya sudah terpasang dan siap digunakan.
+### 6. Buka pengaturan
 
-## Tips Tambahan
-- Jika ekstensi tidak muncul, coba mulai ulang Chrome terlebih dahulu.
-- Pastikan folder images berisi file foto yang valid.
-- Jika terjadi masalah, cek kembali file photos.json dan folder images.
-- Pastikan Anda memilih folder utama proyek saat mengklik Load unpacked, bukan folder images saja.
+Klik ikon Ayumin Gallery di toolbar Chrome. Jika ikonnya belum terlihat, buka menu Extensions dan pin Ayumin Gallery.
+
+Dari popup Anda dapat mengatur:
+
+- tampil/sembunyikan Bookmarks;
+- tampil/sembunyikan History;
+- aktif/nonaktifkan animasi latar;
+- pilih efek acak, tanpa efek tambahan, atau satu efek tertentu;
+- interval pergantian kolase;
+- nama panggilan untuk sapaan.
+
+## Cara kerja batas 25 foto
+
+Ayumin Gallery menghitung ukuran layout berdasarkan ukuran layar. Layout yang terlalu padat akan otomatis dibuat lebih renggang agar tidak membutuhkan lebih dari **25 elemen foto**.
+
+Contoh:
+
+- Jika tersedia **60 foto**, satu tampilan tetap menggunakan maksimal 25 foto/ubin.
+- Jika tersedia hanya **6 foto** tetapi layout membutuhkan 18 ubin, keenam foto tersebut akan diacak dan **digunakan kembali** sampai 18 ubin terisi.
+
+Tujuannya adalah menjaga wallpaper tetap penuh tanpa membuat terlalu banyak elemen gambar yang dapat menyebabkan lag.
+
+## Mengganti foto
+
+1. Tambahkan, hapus, atau ganti file di folder `images`.
+2. Jalankan kembali `start.cmd`, atau edit `photos.json` secara manual.
+3. Buka `chrome://extensions/`.
+4. Klik tombol **Reload** pada Ayumin Gallery.
+5. Buka tab baru untuk melihat hasilnya.
+
+## Troubleshooting
+
+**Foto tidak muncul**  
+Pastikan nama file di `photos.json` sama persis dengan file yang ada di folder `images`.
+
+**Muncul pesan “Gagal membaca photos.json”**  
+Periksa apakah `photos.json` ada di folder utama dan format JSON-nya valid.
+
+**Ekstensi tidak muncul setelah di-load**  
+Pastikan folder yang dipilih melalui **Load unpacked** adalah folder yang memiliki `manifest.json`.
+
+**Bookmark atau History kosong**  
+Pastikan panel terkait aktif di popup. History atau bookmark yang memang belum tersedia akan menampilkan keadaan kosong.
+
+**Favicon tidak muncul**  
+Favicon diambil melalui fasilitas favicon Chrome dan mungkin belum tersedia untuk situs yang belum pernah dikunjungi.
+
+**Animasi terlalu berat**  
+Matikan **Animasi latar** dari popup. Versi 2.3 juga membatasi wallpaper ke maksimal 25 ubin foto untuk mengurangi beban render.
+
+## File penting
+
+- `manifest.json` — konfigurasi ekstensi dan permission Chrome.
+- `index.html` — struktur halaman New Tab.
+- `style.css` — tampilan halaman dan efek kolase.
+- `script.js` — jam, kolase, Bookmarks, History, pengaturan, dan logika efek.
+- `popup.html` / `popup.css` / `popup.js` — antarmuka dan penyimpanan pengaturan.
+- `images/` — folder foto wallpaper.
+- `photos.json` — daftar foto yang boleh digunakan.
+
+## Permission
+
+Ekstensi menggunakan permission berikut:
+
+- `bookmarks` — membaca bookmark untuk panel Bookmarks.
+- `history` — membaca history untuk panel History.
+- `storage` — menyimpan pengaturan secara lokal.
+- `favicon` — menampilkan favicon pada daftar link.
+
+Data pengaturan disimpan melalui `chrome.storage.local`.

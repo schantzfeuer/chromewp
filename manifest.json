@@ -1,23 +1,32 @@
 {
   "manifest_version": 3,
   "name": "Ayumin Gallery",
-  "version": "1.0",
-  "description": "Halaman New Tab premium dengan Glassmorphism, Mini Gallery, Clock, History, dan Bookmarks.",
+  "version": "2.3.0",
+  "description": "New Tab glassmorphism dengan kolase foto maksimal 25 ubin, efek visual pilihan, jam live, bookmark, dan history.",
+  "minimum_chrome_version": "116",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "Pengaturan Ayumin Gallery"
   },
   "permissions": [
     "bookmarks",
     "history",
-    "storage"
+    "storage",
+    "favicon"
   ],
   "web_accessible_resources": [
     {
-      "resources": ["images/*", "photos.json"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "images/*",
+        "photos.json",
+        "_favicon/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
 }
